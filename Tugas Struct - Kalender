@@ -12,11 +12,10 @@ struct kalender
 	int tahun;
 	bool kabisat;
 	string month;
-};
+} hari;
 
 kalender Hari_ini()
 {
-	kalender hari;
 	cout<<"Masukan tanggal hari ini: ";
 	cin>>hari.tanggal;
 bulanlagi:;
@@ -113,15 +112,15 @@ bulanlagi:;
 			}
 		}
 	}
+	cout<<"Tanggal hari ini adalah: "<<endl;
+	cout<<hari.tanggal<<"/"<<hari.month<<"/"<<hari.tahun<<endl<<endl;
 	getch();
 	system("cls");
 	return hari;
 }
-kalender hari_ini;
 
 kalender Hari_esok()
 {
-	kalender hari = hari_ini;
 	int bulan=99;
 
 	if((hari.bulan == februari)&&(hari.kabisat == true))
@@ -224,7 +223,7 @@ menu:;
 
 	if(pilih == 1)
 	{
-		hari_ini=Hari_ini();
+		Hari_ini();
 		goto menu;
 	}
 	else if(pilih == 2)
